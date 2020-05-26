@@ -24,7 +24,7 @@ a {
 }
 
 .navbar-toggler-icon {
-    background-image: url("treelines.png");
+    background-image: url("../img/treelines.png");
     background-size: 60px;
 }
 
@@ -51,10 +51,9 @@ a {
     border: 1px #DFDFDF solid;
 }
 
-.log{
-    
+.btn-light{
+    margin-left: 250px;
 }
-
 
 /* REGISTER BLANK CSS */
 .divider-text {

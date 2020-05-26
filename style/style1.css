@@ -15,7 +15,7 @@ a {
 }
 
 .navbar-toggler-icon {
-    background-image: url("img/treelines.png");
+    background-image: url("../img/treelines.png");
     background-size: 60px;
 }
 
@@ -43,4 +43,18 @@ button:hover {
 
 button:focus {
     outline: 0;
+}
+
+.navbar {
+    border-bottom: 1px black solid;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+
+.btn-light{
+    margin-left: 250px;
 }
