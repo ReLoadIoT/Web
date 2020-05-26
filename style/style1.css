@@ -29,11 +29,8 @@ a {
 #matrix button {
     height: 40px;
     width: 40px;
-    /*border: 2px solid #000000;*/
     font-family: helvetica, serif;
-    /*font-weight: bold;*/
 }
-
 
 button:hover {
     background-color: #000000;
@@ -55,6 +52,6 @@ button:focus {
     border-color: gray;
 }
 
-.btn-light{
+.btn-light {
     margin-left: 250px;
 }

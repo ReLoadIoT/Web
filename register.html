@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Registration</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="/style/style.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -69,8 +70,8 @@
             <p class="text-center">Get started with your free account</p>
             <p>
                 <a class="btn btn-block btn-twitter" href="" style="background-color: white; color: black;"> <img
-                        class="glogo" src="img/symbol.png"><i class="fab fa-twitter"></i>Login via Google</a>
-                <a class="btn btn-block btn-facebook" href=""> <img class="flogo" src="img/fblogo.png"><i
+                        class="glogo" src="img/symbol.png" alt="GLogo"><i class="fab fa-twitter"></i>Login via Google</a>
+                <a class="btn btn-block btn-facebook" href=""> <img class="flogo" src="img/fblogo.png" alt="FBLogo"><i
                         class="fab fa-facebook-f"></i>Login via Facebook</a>
             </p>
             <p class="divider-text">
@@ -81,26 +82,34 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                     </div>
-                    <input class="form-control" name="" placeholder="Your nickname" type="text">
+                    <label>
+                        <input class="form-control" name="" placeholder="Your nickname" type="text">
+                    </label>
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input class="form-control" name="" placeholder="Email address" type="email">
+                    <label>
+                        <input class="form-control" name="" placeholder="Email address" type="email">
+                    </label>
                 </div> <!-- form-group// -->
 
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Create password" type="password">
+                    <label>
+                        <input class="form-control" placeholder="Create password" type="password">
+                    </label>
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                     </div>
-                    <input class="form-control" placeholder="Repeat password" type="password">
+                    <label>
+                        <input class="form-control" placeholder="Repeat password" type="password">
+                    </label>
                 </div> <!-- form-group// -->
                 <hr>
                 <div class="form-group">
@@ -109,5 +118,8 @@
                 <p class="text-center">Have an account? <a href="login.html">Log In</a></p>
 
             </form>
+        </article>
+    </div>
+</div>
 </body>
 </html>
