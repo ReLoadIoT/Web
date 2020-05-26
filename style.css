@@ -1,0 +1,47 @@
+body {
+    padding-top: 56px;
+}
+
+nav {
+    background-color: white;
+}
+
+header {
+    background-color: black;
+}
+
+a {
+    color: black;
+}
+
+.navbar-toggler-icon {
+    background-image: url("treelines.png");
+    background-size: 60px;
+}
+
+#matrix {
+    border: 5px solid black;
+    margin: 0 auto;
+
+}
+
+
+#matrix button {
+    height: 40px;
+    width: 40px;
+    /*border: 2px solid #000000;*/
+    font-family: helvetica, serif;
+    /*font-weight: bold;*/
+}
+
+
+
+button:hover {
+    background-color: #000000;
+    color: white;
+    border: 3px solid white;
+}
+
+button:focus {
+    outline: 0;
+}
