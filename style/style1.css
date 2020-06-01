@@ -20,22 +20,22 @@ a {
 }
 
 #matrix {
-    border: 5px solid black;
+    border: 1px solid black;
     margin: 0 auto;
-
 }
-
 
 #matrix button {
     height: 40px;
     width: 40px;
-    font-family: helvetica, serif;
+    background-color: #e1e1e1;
+    /*font-family: helvetica, serif;*/
+    border: none;
 }
 
-button:hover {
+#matrix button:hover {
     background-color: #000000;
     color: white;
-    border: 3px solid white;
+    border: 1px solid white;
 }
 
 button:focus {
