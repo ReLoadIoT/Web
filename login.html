@@ -32,7 +32,7 @@
 
                 <li class="nav-item active">
                     <b>
-                        <a class="nav-link" href="about.html">Home
+                        <a class="nav-link" href="home.html">Home
                             <span class="sr-only">(current)</span>
                         </a>
                     </b>
@@ -77,30 +77,65 @@
             <p class="divider-text">
                 <span class="bg-light">OR</span>
             </p>
-            <form>
+            <!--            <form>-->
 
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-                    </div>
-                    <input class="form-control" name="" placeholder="Email address" type="email">
-                </div> <!-- form-group// -->
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                </div>
+                <input class="form-control" name="" placeholder="Email address" type="email" id="email">
+            </div> <!-- form-group// -->
 
-                <div class="form-group input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-                    </div>
-                    <input class="form-control" placeholder="Password" type="password">
-                </div> <!-- form-group// -->
-                <hr>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit"> Log In</button>
-                </div> <!-- form-group// -->
-                <p class="text-center"><a href="">Forgot password?</a></p>
+            <div class="form-group input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                </div>
+                <input class="form-control" placeholder="Password" type="password" id="password">
+            </div> <!-- form-group// -->
+            <hr>
+            <div class="form-group">
+                <button class="btn btn-primary btn-block" type="submit" id="submit"> Log In</button>
+            </div> <!-- form-group// -->
+            <div>
+                <p class="text-center" id="error" style="color: red; display: none">Password incorrect </p>
+            </div>
+            <p class="text-center"><a href="">Forgot password?</a></p>
 
-            </form>
+            <!--            </form>-->
         </article>
     </div>
 </div>
 </body>
+
+<script>
+
+    let data = {}
+
+    document.getElementById("email").addEventListener("keyup", (e) => {
+        data.username = e.target.value;
+    })
+
+    document.getElementById("password").addEventListener("keyup", (e) => {
+        data.password = e.target.value;
+    })
+
+    document.getElementById("submit").addEventListener("click", () => {
+        fetch("http://localhost:7580/login", {
+            method: 'POST',
+            credentials: "include",
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Bad credentials');
+                }
+                window.location = "http://localhost:63342/Web/project/home.html";
+                console.log(response.status)
+            })
+            .catch((error) => {
+                document.getElementById("error").style.display  = "block";
+                console.log(error);
+            });
+    })
+</script>
 </html>
