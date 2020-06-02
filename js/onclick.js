@@ -1,17 +1,20 @@
-const path = 'http://localhost:7580/'
+const path = 'http://bc688e716f1b.ngrok.io/'
 
 window.addEventListener("DOMContentLoaded", () => {
     const matrix = document.getElementById('matrix');
 
-    fetch(`${path}coordinates`)
-        .then(response => response.json())
-        .then(data => data.forEach(element => {
+    setInterval(() => {
+        fetch(`${path}coordinates`)
+            .then(response => response.json())
+            .then(data => data.forEach(element => {
 
-            let id = document.getElementById(element);
-            id.style.backgroundColor = "black";
-            id.disabled = true;
+                let id = document.getElementById(element);
+                id.style.backgroundColor = "black";
+                id.disabled = true;
 
-        }));
+            }));
+    }, 1000);
+
 
     matrix.addEventListener('click', (event) => {
         const isButton = event.target.nodeName === 'BUTTON';
