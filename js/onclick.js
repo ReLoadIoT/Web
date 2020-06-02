@@ -1,7 +1,9 @@
+const path = 'http://4367f77b43fd.ngrok.io/'
+
 window.addEventListener("DOMContentLoaded", () => {
     const matrix = document.getElementById('matrix');
 
-    fetch("http://localhost:7580/coordinates")
+    fetch(`${path}coordinates`)
         .then(response => response.json())
         .then(data => data.forEach(element => {
 
@@ -19,8 +21,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
         let id = event.target.id;
 
-        fetch(`http://localhost:7580/coordinates?coordinate=${id}`, {
+        fetch(`${path}coordinates?coordinate=${id}`, {
             method: 'POST',
+            headers: {
+                "Authorization": localStorage.getItem("JWT") ? localStorage.getItem("JWT") : ""
+            },
             credentials: "include"
         })
             .then(response => {
@@ -37,30 +42,34 @@ window.addEventListener("DOMContentLoaded", () => {
 
     })
 
-    let cookie = parseCookie(document.cookie)
-    const parsedJWT = parseJwt(cookie.JWT);
-    const sub = parseJwt(cookie.JWT).sub;
+    const JWTToken = localStorage.getItem("JWT");
+    let parsedJWT, sub;
+    if(JWTToken !== null) {
+        parsedJWT = parseJwt(JWTToken);
+        sub = parsedJWT.sub;
 
-    parsedJWT.authorities.forEach(authority => {
-        if(authority.authority === "ROLE_ADMIN") {
-            let div = document.getElementById("matrix-div");
-            let button = document.createElement("button");
-            button.className = "btn btn-secondary mt-3";
-            button.setAttribute("type", "button");
-            button.innerText = "Clear";
-            button.style.textAlign = "center";
-            div.appendChild(button);
-            button.onclick = () => {
-                fetch("http://localhost:7580/coordinates", {
-                    method: 'DELETE',
-                    credentials: "include"
-                }).then(() => location.reload())
+        parsedJWT.authorities.forEach(authority => {
+            if (authority.authority === "ROLE_ADMIN") {
+                let div = document.getElementById("matrix-div");
+                let button = document.createElement("button");
+                button.className = "btn btn-secondary mt-3";
+                button.setAttribute("type", "button");
+                button.innerText = "Clear";
+                button.style.textAlign = "center";
+                div.appendChild(button);
+                button.onclick = () => {
+                    fetch(`${path}coordinates`, {
+                        method: 'DELETE',
+                        headers: {
+                            "Authorization": localStorage.getItem("JWT") ? localStorage.getItem("JWT") : ""
+                        },
+                        credentials: "include"
+                    }).then(() => location.reload())
+                }
+                console.log("admin");
             }
-            console.log("admin");
-        }
-    });
+        });
 
-    if (cookie.JWT) {
         let divLog = document.querySelector(".log");
         divLog.remove();
         let navbar = document.querySelector(".navbar-nav");
@@ -86,22 +95,12 @@ window.addEventListener("DOMContentLoaded", () => {
         navbar.appendChild(li);
 
         innerA.addEventListener('click', () => {
-            document.cookie = "JWT=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            localStorage.removeItem("JWT")
             location.reload();
         })
     }
 
 })
-
-const parseCookie = str =>
-    str
-        .split(';')
-        .map(v => v.split('='))
-        .reduce((acc, v) => {
-            acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
-            return acc;
-        }, {});
-
 
 function parseJwt (token) {
     var base64Url = token.split('.')[1];
