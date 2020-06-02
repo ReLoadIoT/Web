@@ -55,3 +55,11 @@ button:focus {
 .btn-light {
     margin-left: 250px;
 }
+
+footer{
+    background-color: black;
+}
+
+.map{
+    border: 2px solid black;
+}
