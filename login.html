@@ -129,9 +129,10 @@
                 if (!response.ok) {
                     throw new Error('Bad credentials');
                 }
-                window.location = "http://localhost:5500/home.html";
-                console.log(response.status)
+                return response.json();
             })
+            .then(data => localStorage.setItem("JWT", data.Authorization))
+            .then(() => window.location = "http://localhost:5500/home.html")
             .catch((error) => {
                 document.getElementById("error").style.display  = "block";
                 console.log(error);
