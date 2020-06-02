@@ -109,7 +109,7 @@
 
 <script>
 
-    const path = 'http://4367f77b43fd.ngrok.io/'
+    const path = 'http://localhost:7580/'
 
     let data = {}
 
@@ -134,7 +134,7 @@
                 return response.json();
             })
             .then(data => localStorage.setItem("JWT", data.Authorization))
-            .then(() => window.location = "/Web/home.html")
+            .then(() => window.location = "/home.html")
             .catch((error) => {
                 document.getElementById("error").style.display  = "block";
                 console.log(error);
