@@ -6,9 +6,6 @@ nav {
     background-color: white;
 }
 
-header {
-    background-color: black;
-}
 
 a {
     color: black;
@@ -60,6 +57,3 @@ footer{
     background-color: black;
 }
 
-.map{
-    border: 2px solid black;
-}
