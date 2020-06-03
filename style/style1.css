@@ -43,16 +43,27 @@ button:focus {
 
 .btn-sm {
     border-radius: 0;
+    background-color: darkgray;
 }
 
 .navbar {
     border-bottom: 1px black solid;
 }
 
+.nav-link:hover {
+    color: darkgray;
+}
+
 .btn {
     background-color: black;
     color: white;
     border-color: gray;
+}
+
+.btn:hover {
+    color: black;
+    background-color: darkgray;
+    border-color: black;
 }
 
 .btn-light {

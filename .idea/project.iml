@@ -15,5 +15,6 @@
     <orderEntry type="library" name="popper.js" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="axios" level="application" />
+    <orderEntry type="library" name="animate.css" level="application" />
   </component>
 </module>
