@@ -56,7 +56,7 @@ document.getElementById("submit").addEventListener("click", (event) => {
                         document.getElementById("error").style.display = "block";
                     })
             } else {
-                console.log("success")
+                window.location = "/home.html";
             }
         })
 })
