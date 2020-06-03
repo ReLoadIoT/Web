@@ -20,7 +20,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <div class="navbar-brand"><img alt="Logo" height="40" src="img/Logo_2.jpg" href="home.html"></div>
+        <div class="navbar-brand"><img alt="Logo" height="40" href="home.html" src="img/Logo_2.jpg"></div>
         <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler"
                 data-target="#navbarResponsive" data-toggle="collapse" type="button">
@@ -70,8 +70,8 @@
             <p class="text-center">Get started with your free account</p>
             <p>
                 <a class="btn btn-block btn-twitter" href="" style="background-color: white; color: black;"> <img
-                        class="glogo" src="img/symbol.png"><i class="fab fa-twitter"></i>Login via Google</a>
-                <a class="btn btn-block btn-facebook" href=""> <img class="flogo" src="img/fblogo.png"><i
+                        class="glogo" src="img/symbol.png" alt="GLogo"><i class="fab fa-twitter"></i>Login via Google</a>
+                <a class="btn btn-block btn-facebook" href=""> <img class="flogo" src="img/fblogo.png" alt="FBLogo"><i
                         class="fab fa-facebook-f"></i>Login via Facebook</a>
             </p>
             <p class="divider-text">
@@ -83,18 +83,18 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                 </div>
-                <input class="form-control" name="" placeholder="Email address" type="email" id="email">
+                <input class="form-control" id="email" name="" placeholder="Email address" type="email">
             </div> <!-- form-group// -->
 
             <div class="form-group input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                 </div>
-                <input class="form-control" placeholder="Password" type="password" id="password">
+                <input class="form-control" id="password" placeholder="Password" type="password">
             </div> <!-- form-group// -->
             <hr>
             <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit" id="submit"> Log In</button>
+                <button class="btn btn-primary btn-block" id="submit" type="submit"> Log In</button>
             </div> <!-- form-group// -->
             <div>
                 <p class="text-center" id="error" style="color: red; display: none">Password incorrect </p>
@@ -136,7 +136,7 @@
             .then(data => localStorage.setItem("JWT", data.Authorization))
             .then(() => window.location = "/home.html")
             .catch((error) => {
-                document.getElementById("error").style.display  = "block";
+                document.getElementById("error").style.display = "block";
                 console.log(error);
             });
     })
