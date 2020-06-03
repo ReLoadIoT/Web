@@ -7,9 +7,9 @@ window.addEventListener("DOMContentLoaded", () => {
         fetch(`${path}coordinates`)
             .then(response => response.json())
             .then(data => {
-                if(data.length === 0) {
+                if (data.length === 0) {
                     for (i = 1; i <= 360; i++) {
-                        let id = document.getElementById('b'+i);
+                        let id = document.getElementById('b' + i);
                         id.style.backgroundColor = "";
                         id.disabled = false;
                     }
@@ -75,9 +75,8 @@ window.addEventListener("DOMContentLoaded", () => {
                             "Authorization": localStorage.getItem("JWT") ? localStorage.getItem("JWT") : ""
                         },
                         credentials: "include"
-                    }).then(() => location.reload())
+                    })
                 }
-                console.log("admin");
             }
         });
 
