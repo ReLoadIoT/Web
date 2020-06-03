@@ -6,13 +6,21 @@ window.addEventListener("DOMContentLoaded", () => {
     setInterval(() => {
         fetch(`${path}coordinates`)
             .then(response => response.json())
-            .then(data => data.forEach(element => {
+            .then(data => {
+                if(data.length === 0) {
+                    for (i = 1; i <= 360; i++) {
+                        let id = document.getElementById('b'+i);
+                        id.style.backgroundColor = "";
+                        id.disabled = false;
+                    }
+                }
+                data.forEach(element => {
+                    let id = document.getElementById(element);
+                    id.style.backgroundColor = "black";
+                    id.disabled = true;
 
-                let id = document.getElementById(element);
-                id.style.backgroundColor = "black";
-                id.disabled = true;
-
-            }));
+                })
+            });
     }, 1000);
 
 
