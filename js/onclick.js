@@ -1,4 +1,4 @@
-const path = 'http://d7f4767f6c5d.ngrok.io/'
+const path = 'https://d7f4767f6c5d.ngrok.io/'
 
 window.addEventListener("DOMContentLoaded", () => {
     const matrix = document.getElementById('matrix');
