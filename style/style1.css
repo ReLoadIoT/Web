@@ -27,7 +27,6 @@ a {
     background-color: #e1e1e1;
     font-size: x-small;
     color: black;
-    /*font-family: helvetica, serif;*/
     border: none;
 }
 
@@ -42,7 +41,7 @@ button:focus {
 }
 
 .btn-sm {
-    border-radius: 0;
+    /*border-radius: 0;*/
     background-color: darkgray;
 }
 
@@ -64,6 +63,10 @@ button:focus {
     color: black;
     background-color: darkgray;
     border-color: black;
+}
+
+.btn.disabled, .btn:disabled {
+    opacity: 1;
 }
 
 .btn-light {
