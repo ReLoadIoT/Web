@@ -91,36 +91,39 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input class="form-control" id="email" name="" placeholder="First Name" type="email">
+                    <input class="form-control" id="firstName" name="" placeholder="First Name" type="text">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input class="form-control" id="email" name="" placeholder="Second Name" type="email">
+                    <input class="form-control" id="secondName" name="" placeholder="Second Name" type="text">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input class="form-control" id="email" name="" placeholder="Nickname" type="email">
+                    <input class="form-control" id="nickname" name="" placeholder="Nickname" type="text">
                 </div> <!-- form-group// -->
 
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input class="form-control" id="email" name="" placeholder="Create Password" type="email">
+                    <input class="form-control" id="password" name="" placeholder="Create Password" type="password">
                 </div> <!-- form-group// -->
                 <div class="form-group input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                     </div>
-                    <input class="form-control" id="email" name="" placeholder="Repeat Password" type="email">
+                    <input class="form-control" id="repeatPassword" name="" placeholder="Repeat Password" type="password">
                 </div> <!-- form-group// -->
                 <hr>
+                <div>
+                    <p class="text-center" id="error" style="color: red; display: none">Password incorrect </p>
+                </div>
                 <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit"> Create Account</button>
+                    <button class="btn btn-primary btn-block" id="submit" type="submit" disabled> Create Account</button>
                 </div> <!-- form-group// -->
                 <p class="text-center">Have an account? <a href="login.html">Log In</a></p>
 

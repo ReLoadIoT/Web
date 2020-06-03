@@ -1,10 +1,10 @@
-const path = 'https://d7f4767f6c5d.ngrok.io/'
+const path = 'https://d7f4767f6c5d.ngrok.io'
 
 window.addEventListener("DOMContentLoaded", () => {
     const matrix = document.getElementById('matrix');
 
     setInterval(() => {
-        fetch(`${path}coordinates`)
+        fetch(`${path}/coordinates`)
             .then(response => response.json())
             .then(data => {
                 if (data.length === 0) {
@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
         let id = event.target.id;
 
-        fetch(`${path}coordinates?coordinate=${id}`, {
+        fetch(`${path}/coordinates?coordinate=${id}`, {
             method: 'POST',
             headers: {
                 "Authorization": localStorage.getItem("JWT") ? localStorage.getItem("JWT") : ""
@@ -69,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 button.style.textAlign = "center";
                 div.appendChild(button);
                 button.onclick = () => {
-                    fetch(`${path}coordinates`, {
+                    fetch(`${path}/coordinates`, {
                         method: 'DELETE',
                         headers: {
                             "Authorization": localStorage.getItem("JWT") ? localStorage.getItem("JWT") : ""

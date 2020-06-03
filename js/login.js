@@ -1,4 +1,4 @@
-const path = 'https://d7f4767f6c5d.ngrok.io/'
+const path = 'https://d7f4767f6c5d.ngrok.io'
 
 let data = {}
 
@@ -10,8 +10,9 @@ document.getElementById("password").addEventListener("keyup", (e) => {
     data.password = e.target.value;
 })
 
-document.getElementById("submit").addEventListener("click", () => {
-    fetch(`${path}login`, {
+document.getElementById("submit").addEventListener("click", (event) => {
+    event.preventDefault();
+    fetch(`${path}/login`, {
         method: 'POST',
         credentials: "include",
         body: JSON.stringify(data)
